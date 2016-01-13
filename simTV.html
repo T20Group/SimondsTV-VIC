@@ -5,6 +5,12 @@
 <title>Simonds TV</title>
 <meta name = "viewport" content ="width=device-width, minimum-scale=1, maximum-scale=1">
 
+<script type="text/javascript">
+    window._startupWatchdog = setTimeout(function(){
+      window.location.reload();
+    }, 8000);
+</script>
+
 <!-- CSS -->
 <link rel="stylesheet" href="css/reset.css" />
 
@@ -269,6 +275,7 @@ $(function() {
 	
 	$('#fancyCover').fadeOut(1000);
 	
+	clearTimeout(window._startupWatchdog);
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 });
