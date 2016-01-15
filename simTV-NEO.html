@@ -177,6 +177,7 @@ $(function() {
 		// remove last image container
 		$('.container').last().remove();
 		// console.log($('.container').length);
+		//$('#error_log').text($('.container').length);
 		
 		return $item;
 	
@@ -193,6 +194,7 @@ $(function() {
 		}
 		
 		//console.log('show ' + img_loc);
+		$('#error_log').text('show ' + img_loc);
 		
 		noImageDupe(img_loc);
 		
@@ -205,10 +207,12 @@ $(function() {
 		// dupe check
 		while ( shown_img_array.indexOf(img_loc)>=0 ) { // repeat function until no duplicate
 			//console.log('found ' + img_loc);
+			$('#error_log').text('found ' + img_loc);
 			var img_loc = randomStaticImg();
 		}
 		
 		//console.log('show ' + img_loc);
+		
 		
 		noImageDupe(img_loc);
 		
@@ -343,7 +347,9 @@ html { background: #fff; }
 add
 </button>
 
-
+<div id="error_log" style="color: #333; position: fixed; top: 0; right: 0; border: none;">
+log
+</div>
 
 </body>
 </html> 
